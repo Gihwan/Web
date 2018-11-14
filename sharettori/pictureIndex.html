@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+
+        <title>画像投稿フォーム</title>
+        <style>
+            body{
+                background-image: url("image/20171112-DSC08973.jpg");
+                background-size: cover;
+            }
+        label {
+                color: white;  
+                background-color: red;
+                padding: 6px;
+                border-radius: 12px;
+                cursor:pointer;
+            }
+        div{ text-align : center ; }
+        .submit{
+            color: white;  
+                background-color: blue;
+                padding: 6px;
+                border-radius: 12px;
+                cursor:pointer;
+        }
+        .neon{
+            vertical-align:middle;
+            color: #fff;
+            font-size:30px;
+            font-weight:bold;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #1b82e2, 0 0 70px #1b82e2, 0 0 80px #1b82e2, 0 0 100px #1b82e2, 0 0 150px #1b82e2;
+        
+        }
+        p#p{
+            color: white;
+        }   
+        </style>
+    </head>
+ 
+    <body><div>
+    <h2 class="neon">画像投稿フォーム</h2>
+    <p id="p">exif情報がついている画像をアップロードしてください</p>
+    <form action="index.php" enctype="multipart/form-data" method="post" >
+<!-- MAX_FILE_SIZE は、必ず "file" input フィールドより前になければなりません -->
+<input type="hidden" name="MAX_FILE_SIZE" value="5000000" />
+    <!-- input 要素の name 属性の値が、$_FILES 配列のキーになります -->
+    <div >
+    <label for="file_photo">
+        +写真を選択
+  <input name="userfile" type="file" id="file_photo" style="display:none;"/>
+</label> 
+<input type="submit" class="submit" value="送信" /> 
+</div>
+  
+    </form>
+    </div></body>
+</html>
